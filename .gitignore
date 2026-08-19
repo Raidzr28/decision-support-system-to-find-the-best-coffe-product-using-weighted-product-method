@@ -1,0 +1,28 @@
+# Kredensial database lokal (salin dari config/database.example.php)
+config/database.php
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Dependencies
+/vendor/
+/node_modules/
+
+# Log & cache
+*.log
+*.cache
+/tmp/
+
+# Editor & OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Backup / dump berisi data asli
+*.sql.bak
+*_backup.sql
+*.sqlite

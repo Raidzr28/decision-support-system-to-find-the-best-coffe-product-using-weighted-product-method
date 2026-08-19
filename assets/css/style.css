@@ -1,0 +1,271 @@
+/* =====================================================================
+   SPK Weighted Product - Rekomendasi Menu Kopi
+   Tema: Caffeine & Cove  (beige / mocha / taupe)
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap');
+
+:root{
+  --bg:            #e8e0d6;   /* beige latar */
+  --bg-soft:       #efe9e1;
+  --surface:       #ffffff;
+  --mocha:         #a0897a;   /* coklat mocha utama */
+  --mocha-dark:    #8a7363;
+  --mocha-soft:    #b7a293;
+  --taupe-panel:   #a4918381; /* panel "Our coffee" */
+  --ink:           #1c1a18;   /* teks heading hitam */
+  --muted:         #6f655d;
+  --line:          #d9cfc4;
+  --gold:          #c9a227;
+  --good:          #4f7a52;
+  --bad:           #b25b4a;
+  --radius:        22px;
+  --radius-sm:     14px;
+  --shadow:        0 18px 40px -22px rgba(80,60,45,.45);
+  --shadow-sm:     0 8px 22px -14px rgba(80,60,45,.4);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+
+/* ---------- Brand / logo ---------- */
+.brand{font-family:'Caveat',cursive;font-weight:700;line-height:.95;font-size:26px}
+.brand .b1{display:block}
+.brand .b2{display:block;padding-left:14px}
+
+/* ---------- Topbar ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(232,224,214,.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{
+  max-width:1240px;margin:0 auto;padding:14px 28px;
+  display:flex;align-items:center;gap:28px;
+}
+.nav{display:flex;gap:6px;margin-left:18px;flex-wrap:wrap}
+.nav a{
+  padding:9px 16px;border-radius:999px;font-weight:600;font-size:14.5px;
+  color:var(--ink);transition:.18s;
+}
+.nav a:hover{background:#ffffff8c}
+.nav a.active{background:var(--mocha);color:#fff;box-shadow:var(--shadow-sm)}
+.topbar-right{margin-left:auto;display:flex;align-items:center;gap:14px}
+.user-chip{
+  display:flex;align-items:center;gap:9px;background:#fff;
+  padding:7px 8px 7px 16px;border-radius:999px;font-weight:600;font-size:14px;
+  box-shadow:var(--shadow-sm);
+}
+.user-chip .av{
+  width:32px;height:32px;border-radius:50%;background:var(--mocha);
+  color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px;
+}
+.btn-logout{
+  background:var(--mocha);color:#fff;border:none;cursor:pointer;
+  padding:10px 18px;border-radius:999px;font-weight:600;font-size:13.5px;
+  font-family:inherit;transition:.18s;
+}
+.btn-logout:hover{background:var(--mocha-dark)}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:1240px;margin:0 auto;padding:34px 28px 70px}
+.page-head{margin-bottom:26px}
+.page-head h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.05}
+.page-head p{color:var(--muted);margin-top:8px;font-size:15.5px;max-width:680px}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+  border:none;font-family:inherit;font-weight:600;font-size:14.5px;
+  padding:13px 26px;border-radius:999px;transition:.18s;
+}
+.btn-primary{background:var(--mocha);color:#fff;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:var(--mocha-dark);transform:translateY(-1px)}
+.btn-ghost{background:#fff;color:var(--ink);box-shadow:var(--shadow-sm)}
+.btn-ghost:hover{background:var(--bg-soft)}
+.btn-sm{padding:8px 16px;font-size:13px}
+.btn-danger{background:var(--bad);color:#fff}
+.btn-danger:hover{filter:brightness(.94)}
+
+/* ---------- Cards ---------- */
+.card{
+  background:var(--surface);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:26px;
+}
+.card+.card{margin-top:22px}
+.card h2{font-size:21px;font-weight:700;margin-bottom:4px}
+.card .sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+
+/* ---------- Stat grid (beranda) ---------- */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:24px}
+.stat{
+  background:var(--surface);border-radius:var(--radius);padding:24px;
+  box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.stat .ic{font-size:26px;margin-bottom:10px}
+.stat .num{font-size:38px;font-weight:800;letter-spacing:-1px;line-height:1}
+.stat .lbl{color:var(--muted);font-weight:600;margin-top:6px;font-size:14px}
+.stat.accent{background:var(--mocha);color:#fff}
+.stat.accent .lbl{color:#ffffffcc}
+
+/* hero panel like the reference "Our coffee" */
+.hero-panel{
+  background:var(--taupe-panel);
+  border-radius:30px;padding:34px 34px 30px;color:#fff;margin-bottom:26px;
+  box-shadow:var(--shadow);
+}
+.hero-panel h2{font-size:30px;font-weight:800;letter-spacing:-.5px}
+.hero-panel p{color:#fffffff2;margin-top:8px;max-width:620px;font-size:15px}
+.hero-actions{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+.hero-panel .btn-ghost{color:var(--ink)}
+
+/* ---------- Tables ---------- */
+.table-scroll{overflow-x:auto;border-radius:var(--radius-sm)}
+table.data{width:100%;border-collapse:collapse;font-size:13.6px;min-width:620px}
+table.data th,table.data td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+table.data thead th{
+  background:var(--bg-soft);font-weight:700;color:var(--ink);
+  position:sticky;top:0;white-space:nowrap;
+}
+table.data tbody tr:hover{background:#faf7f3}
+table.data td.c{text-align:center}
+table.data td.r{text-align:right;font-variant-numeric:tabular-nums}
+.rank-badge{
+  display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;
+  background:var(--bg-soft);font-weight:700;font-size:13px;
+}
+.rank-1{background:var(--gold);color:#fff}
+.rank-2{background:#b9b3aa;color:#fff}
+.rank-3{background:#cd9b6a;color:#fff}
+.tag{display:inline-block;padding:3px 11px;border-radius:999px;font-size:12px;font-weight:600}
+.tag-benefit{background:#e3efe2;color:var(--good)}
+.tag-cost{background:#f4e2dd;color:var(--bad)}
+.tag-best{background:var(--gold);color:#fff}
+
+/* ---------- Forms ---------- */
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-weight:600;font-size:13.5px;color:var(--ink)}
+.field .hint{font-size:12px;color:var(--muted)}
+input,select,textarea{
+  font-family:inherit;font-size:14px;padding:12px 14px;border-radius:12px;
+  border:1.5px solid var(--line);background:#fff;color:var(--ink);width:100%;
+  transition:.15s;
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--mocha);box-shadow:0 0 0 3px #a0897a22}
+.form-actions{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+
+/* ---------- Auth ---------- */
+.auth-bg{
+  min-height:100vh;display:grid;place-items:center;padding:24px;
+  background:
+    radial-gradient(circle at 20% 15%, #f0e9e0 0%, transparent 55%),
+    radial-gradient(circle at 85% 80%, #d8c7b8 0%, transparent 50%),
+    var(--bg);
+}
+.auth-card{
+  width:100%;max-width:420px;background:#fff;border-radius:28px;
+  box-shadow:0 30px 60px -30px rgba(70,50,35,.5);padding:40px 36px;
+}
+.auth-card .brand{font-size:30px;text-align:center;margin-bottom:6px}
+.auth-card .ttl{text-align:center;font-size:24px;font-weight:800;margin-top:14px}
+.auth-card .desc{text-align:center;color:var(--muted);font-size:14px;margin:6px 0 26px}
+.auth-card .field{margin-bottom:16px}
+.auth-card .btn-primary{width:100%;justify-content:center;margin-top:6px;padding:14px}
+.cred-hint{margin-top:20px;text-align:center;font-size:12.5px;color:var(--muted)}
+.cred-hint b{color:var(--mocha-dark)}
+
+/* ---------- Alerts ---------- */
+.alert{padding:13px 18px;border-radius:14px;font-weight:600;font-size:14px;margin-bottom:18px}
+.alert-ok{background:#e3efe2;color:var(--good)}
+.alert-err{background:#f7e1dc;color:var(--bad)}
+
+/* ---------- Best result banner ---------- */
+.best-banner{
+  background:linear-gradient(120deg,var(--mocha),var(--mocha-soft));
+  color:#fff;border-radius:var(--radius);padding:28px 30px;margin-bottom:24px;
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;box-shadow:var(--shadow);
+}
+.best-banner .crown{font-size:46px}
+.best-banner .ttl{font-size:13px;text-transform:uppercase;letter-spacing:1.5px;opacity:.85;font-weight:700}
+.best-banner .menu{font-size:30px;font-weight:800;letter-spacing:-.5px}
+.best-banner .val{margin-left:auto;text-align:right}
+.best-banner .val .v{font-size:34px;font-weight:800}
+.best-banner .val .vl{font-size:12px;opacity:.85}
+
+/* ---------- Misc ---------- */
+.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.toolbar .spacer{flex:1}
+.search-box{position:relative;min-width:240px}
+.search-box input{padding-left:40px}
+.search-box::before{content:"\f002";font-family:"Font Awesome 6 Free";font-weight:900;position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:15px;color:var(--muted)}
+.muted{color:var(--muted)}
+.formula{background:var(--bg-soft);border-radius:14px;padding:14px 18px;font-size:13.5px;color:var(--muted);margin-bottom:16px}
+.formula code{background:#fff;padding:2px 8px;border-radius:7px;color:var(--mocha-dark);font-weight:600}
+.empty{text-align:center;padding:50px 20px;color:var(--muted)}
+.empty .ic{font-size:46px;margin-bottom:12px}
+
+/* ---------- Podium Top 3 ---------- */
+.podium{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.podium-card{
+  background:var(--bg-soft);border-radius:var(--radius-sm);padding:22px 18px;text-align:center;
+  border-top:5px solid var(--mocha);position:relative;
+}
+.podium-card.rank-1{border-top-color:var(--gold);background:linear-gradient(160deg,#fdf6e3,var(--bg-soft))}
+.podium-card.rank-2{border-top-color:#b9b3aa}
+.podium-card.rank-3{border-top-color:#cd9b6a}
+.podium-badge{
+  width:34px;height:34px;border-radius:50%;display:inline-grid;place-items:center;
+  background:var(--mocha);color:#fff;font-weight:800;margin-bottom:10px;
+}
+.podium-card.rank-1 .podium-badge{background:var(--gold)}
+.podium-card.rank-2 .podium-badge{background:#b9b3aa}
+.podium-card.rank-3 .podium-badge{background:#cd9b6a}
+.podium-menu{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.podium-kode{font-size:12.5px;color:var(--muted);margin-bottom:14px}
+.podium-v{font-size:22px;font-weight:800;color:var(--mocha-dark)}
+.podium-lbl{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+
+/* ---------- Print ---------- */
+@media print{
+  .topbar,.toolbar,.form-actions,.btn,.no-print{display:none!important}
+  body{background:#fff}
+  .wrap{padding:0;max-width:100%}
+  .card,.stat,.best-banner{box-shadow:none;border:1px solid #ddd}
+  .print-head{display:block!important}
+  .print-sign{display:flex!important}
+}
+.print-head{display:none;text-align:center;margin-bottom:18px}
+.kop-surat{display:flex;align-items:center;gap:16px;text-align:left;padding-bottom:12px}
+.kop-logo{
+  flex:none;width:52px;height:52px;border-radius:50%;
+  background:var(--mocha);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;
+}
+.kop-text{flex:1}
+.kop-name{font-family:'Caveat',cursive;font-weight:700;font-size:26px;line-height:1}
+.kop-desc{font-size:12.5px;font-weight:600;color:#333;margin-top:2px}
+.kop-addr{font-size:11px;color:#666;margin-top:2px}
+.kop-line{border-bottom:3px solid var(--ink);margin-bottom:2px}
+.kop-line::after{content:"";display:block;border-bottom:1px solid var(--ink);margin-top:3px}
+.print-head h3{font-size:18px;font-weight:800;margin-top:16px}
+.print-head p{font-size:13px;color:#444}
+
+.print-sign{display:none;width:100%;margin-top:56px;justify-content:flex-end}
+.print-sign .sign-col{width:250px;margin-left:auto;text-align:center;font-size:13px}
+.print-sign .sign-date{margin-bottom:4px}
+.print-sign .sign-role{font-weight:600;margin-bottom:34px}
+.print-sign .sign-space{height:60px}
+.print-sign .sign-name{font-weight:700;border-top:1px solid var(--ink);padding-top:4px}
+
+@media(max-width:720px){
+  .page-head h1{font-size:30px}
+  .nav{display:none}
+}
